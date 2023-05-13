@@ -22,12 +22,17 @@ await exec(["fnm", "ls"]).then(async (output) => {
   const versions = output
     .split("\n")
     .filter(Boolean)
-    .map((k) => k.split(" ")[1])
-    .filter((v) => v !== "system");
+    .map((k) => k.split(" ").filter(Boolean).slice(1))
+    .filter((v) => v[0] !== "system");
 
   await writeText(
     "packages/fnm.sh",
-    versions.map((k) => `fnm install ${k}`).join("\n") + "\n",
+    versions
+      .map((v) =>
+        `fnm install ${v[0]}` + (v[1] ? ` && fnm alias ${v[0]} ${v[1]}` : "")
+      )
+      .join("\n") +
+      "\n",
   );
 
   logExec("Node.js versions (fnm)", "packages/fnm.sh");
