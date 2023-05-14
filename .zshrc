@@ -24,7 +24,9 @@ export EDITOR="hx"
 alias vim="hx"
 alias ls="exa"
 
+alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"
 alias ghrvw="gh repo view --web"
+
 alias opr="op run --env-file=.env.1password --"
 
 alias dequarantine="xattr -d com.apple.quarantine"
