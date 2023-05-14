@@ -1,5 +1,5 @@
 # p10k
-romkatv/powerlevel10k
+# romkatv/powerlevel10k
 
 # ohmyzsh
 ohmyzsh/ohmyzsh path:plugins/macos
