@@ -17,6 +17,7 @@ source "$(brew --prefix antidote)/share/antidote/antidote.zsh"
 antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
 
 # environment variables
+export LS_COLORS="$(vivid generate catppuccin-macchiato)"
 export LANG=en_US.UTF-8
 export EDITOR="hx"
 
