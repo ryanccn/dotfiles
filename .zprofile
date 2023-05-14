@@ -1,5 +1,5 @@
 # 1Password SSH
-export SSH_AUTH_SOCK="${HOME}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
 # Homebrew shell env
 export HOMEBREW_NO_ANALYTICS=1
@@ -12,7 +12,7 @@ eval "$(fnm env --use-on-cd)"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+command -v pyenv &> /dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/shims/python"
 
@@ -23,13 +23,13 @@ export PATH="$(yarn global bin):$PATH"
 source "$HOME/.cargo/env"
 
 # local
-export PATH="${HOME}/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # deno
-export PATH="${HOME}/.deno/bin:$PATH"
+export PATH="$HOME/.deno/bin:$PATH"
 
 # pnpm
-export PNPM_HOME="${HOME}/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 # ccache
@@ -41,5 +41,5 @@ export CHECKPOINT_DISABLE=1        # Prisma
 export DISABLE_TELEMETRY=YES       # diffusers
 
 # go
-export PATH="${HOME}/go/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 export GOPROXY="direct"

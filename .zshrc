@@ -6,9 +6,9 @@ fi
 # autocompletions
 if type brew &>/dev/null
 then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
 fi
-FPATH="${HOME}/.zfunc:${FPATH}"
+FPATH="$HOME/.zfunc:$FPATH"
 autoload -Uz compinit
 compinit
 
@@ -47,4 +47,4 @@ eval "$(zoxide init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # iTerm
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+[ -e "$HOME/.iterm2_shell_integration.zsh" ] && source "$HOME/.iterm2_shell_integration.zsh"
