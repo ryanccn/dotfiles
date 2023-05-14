@@ -43,6 +43,3 @@ export DISABLE_TELEMETRY=YES       # diffusers
 # go
 export PATH="${HOME}/go/bin:$PATH"
 export GOPROXY="direct"
-
-# zoxide
-eval "$(zoxide init zsh)"
