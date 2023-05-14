@@ -6,17 +6,8 @@ FPATH="${HOME}/.zfunc:${FPATH}"
 autoload -Uz compinit
 compinit
 
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="robbyrussell"
-DISABLE_AUTO_TITLE="true"
-DISABLE_MAGIC_FUNCTIONS="true"
-
-plugins=(macos git brew yarn direnv 1password zsh-syntax-highlighting zsh-autosuggestions)
-
-# ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
-source $ZSH/oh-my-zsh.sh
+source "$(brew --prefix antidote)/share/antidote/antidote.zsh"
+antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
 
 export LANG=en_US.UTF-8
 export EDITOR="hx"

@@ -4,7 +4,9 @@ await clean();
 
 await cp("~/.zshrc");
 await cp("~/.zprofile");
+await cp("~/.zsh_plugins.txt");
 await cp("~/.gitconfig");
+await cp("~/.hushlogin");
 
 await cp("~/.config/neofetch/config.conf");
 await cp("~/.config/hyfetch.json");
