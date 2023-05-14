@@ -16,24 +16,11 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/shims/python"
 
-# yarn
-export PATH="$(yarn global bin):$PATH"
-
 # cargo
 source "$HOME/.cargo/env"
 
-# local
-export PATH="${HOME}/.local/bin:$PATH"
-
-# deno
-export PATH="${HOME}/.deno/bin:$PATH"
-
 # pnpm
 export PNPM_HOME="${HOME}/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
-# ccache
-export PATH="$(brew --prefix ccache)/libexec:$PATH"
 
 # disable telemetry
 export NEXT_TELEMETRY_DISABLED=1   # Next.js
@@ -41,5 +28,23 @@ export CHECKPOINT_DISABLE=1        # Prisma
 export DISABLE_TELEMETRY=YES       # diffusers
 
 # go
-export PATH="${HOME}/go/bin:$PATH"
 export GOPROXY="direct"
+
+# paths to add to PATH
+typeset -U paths=(
+    "$(yarn global bin)"
+    "$HOME/.local/bin"
+    "$HOME/.deno/bin"
+    "$PNPM_HOME"
+    "$(brew --prefix ccache)/libexec"
+    "${HOME}/go/bin"
+)
+
+# turn PATH into a deduplicated array
+typeset -U path
+
+# iterate over paths to append
+for p in "${paths[@]}"; do
+    [[ -d "$p" ]] && \
+        path=("$p" "$path[@]")
+done
