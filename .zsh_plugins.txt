@@ -6,6 +6,9 @@ ohmyzsh/ohmyzsh path:plugins/macos
 ohmyzsh/ohmyzsh path:plugins/yarn
 ohmyzsh/ohmyzsh path:plugins/1password
 
+# vivid
+ryanccn/vivid-zsh path:plugins/vivid-catppuccin-macchiato.zsh
+
 # fish-like features
 zsh-users/zsh-autosuggestions kind:defer
 catppuccin/zsh-syntax-highlighting path:themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh kind:defer
