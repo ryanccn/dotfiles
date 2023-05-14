@@ -17,7 +17,6 @@ source "$(brew --prefix antidote)/share/antidote/antidote.zsh"
 antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
 
 # environment variables
-export LS_COLORS="$(vivid generate catppuccin-macchiato)"
 export LANG=en_US.UTF-8
 export EDITOR="hx"
 
@@ -45,6 +44,9 @@ eval "$(zoxide init zsh)"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# direnv
+command -v direnv &> /dev/null && eval "$(direnv hook zsh)"
 
 # iTerm
 [ -e "$HOME/.iterm2_shell_integration.zsh" ] && source "$HOME/.iterm2_shell_integration.zsh"
