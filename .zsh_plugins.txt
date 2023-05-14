@@ -1,5 +1,7 @@
-# ohmyzsh
+# p10k
+# romkatv/powerlevel10k
 
+# ohmyzsh
 ohmyzsh/ohmyzsh path:plugins/macos
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/brew
@@ -8,6 +10,6 @@ ohmyzsh/ohmyzsh path:plugins/direnv
 ohmyzsh/ohmyzsh path:plugins/1password
 
 # fish-like features
-
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-autosuggestions
+zsh-users/zsh-autosuggestions kind:defer
+catppuccin/zsh-syntax-highlighting path:themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh kind:defer
+zsh-users/zsh-syntax-highlighting kind:defer
