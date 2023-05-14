@@ -5,6 +5,7 @@ await clean();
 await cp("~/.zshrc");
 await cp("~/.zprofile");
 await cp("~/.zsh_plugins.txt");
+await cp("~/.p10k.zsh");
 await cp("~/.gitconfig");
 await cp("~/.hushlogin");
 
