@@ -1,0 +1,33 @@
+[user]
+	name = Ryan Cao
+	email = 70191398+ryanccn@users.noreply.github.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM4VfgP5+HdCmM/VpTcW8jLKLyR8s0qqoIDXv7iTnWlR
+
+[init]
+	defaultBranch = main
+
+[commit]
+	gpgsign = true
+
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[push]
+	autoSetupRemote = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"
+[core]
+	excludesfile = /Users/ryanccn/.gitignore

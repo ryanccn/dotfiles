@@ -1,0 +1,129 @@
+{
+  //
+  // overall appearance
+  //
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "catppuccin.accentColor": "pink",
+  "catppuccin.workbenchMode": "flat",
+  "catppuccin.customUIColors": {
+    "all": {
+      "activityBar.activeBorder": "accent"
+    }
+  },
+  "workbench.iconTheme": "catppuccin-macchiato",
+  "catppuccin.boldKeywords": false,
+  "catppuccin.italicKeywords": false,
+  //
+  // git
+  //
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "diffEditor.renderSideBySide": false,
+  //
+  // editor
+  //
+  "editor.fontFamily": "\"RyanMono Nerd Font\", monospace",
+  "terminal.integrated.fontFamily": "\"RyanTerm Nerd Font\", monospace",
+  "editor.formatOnSave": true,
+  "editor.fontLigatures": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.fontSize": 16,
+  "editor.minimap.renderCharacters": false,
+  "editor.cursorBlinking": "phase",
+  "editor.inlineSuggest.enabled": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.untitled.hint": "hidden",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.5,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.inheritEnv": false,
+  //
+  // web dev
+  //
+  "npm.packageManager": "yarn",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript",
+    "vue-html": "html"
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  //
+  // Internet services
+  //
+  "telemetry.telemetryLevel": "off",
+  "workbench.enableExperiments": false,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "extensions.ignoreRecommendations": true,
+  "editor.accessibilitySupport": "off",
+  //
+  // Discord
+  //
+  "vscord.status.details.text.editing": "In {workspace}",
+  "vscord.status.details.text.viewing": "In {workspace}",
+  "vscord.status.problems.enabled": false,
+  "vscord.status.state.text.editing": "Working on {file_name}{file_extension}",
+  "vscord.status.buttons.button1.enabled": false,
+  //
+  // GitLens
+  //
+  "gitlens.defaultTimeFormat": "HH:mm",
+  "gitlens.defaultDateShortFormat": "YYYY/MM/DD",
+  "gitlens.defaultDateFormat": null,
+  //
+  // formatters
+  //
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[liquid]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid",
+    "editor.formatOnSave": true
+  },
+  "[liquid-javascript]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid",
+    "editor.formatOnSave": false
+  },
+  "[liquid-css]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid",
+    "editor.formatOnSave": false
+  },
+  "[liquid-scss]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid",
+    "editor.formatOnSave": false
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  //
+  // miscellaneous
+  //
+  "go.toolsManagement.autoUpdate": true,
+  "files.associations": {
+    "*.mcmeta": "json",
+    "*.plist": "xml",
+    "justfile": "makefile"
+  },
+  //
+  // deno
+  //
+  "deno.inlayHints.enumMemberValues.enabled": false,
+  "deno.inlayHints.functionLikeReturnTypes.enabled": false,
+  "deno.inlayHints.parameterNames.enabled": "none",
+  "deno.inlayHints.parameterTypes.enabled": false,
+  "deno.inlayHints.propertyDeclarationTypes.enabled": false,
+  "deno.inlayHints.variableTypes.enabled": false,
+  //
+  // svelte
+  //
+  "svelte.enable-ts-plugin": true
+}

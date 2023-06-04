@@ -1,0 +1,21 @@
+# self-reference
+/.dotfilesignore
+
+# Git
+/.gitignore
+/.gitattributes
+/.git/
+
+# IDEs
+.idea/
+.vscode/
+
+# scripts
+/*.ts
+/justfile
+
+# documentation
+README.md
+
+# wakatime
+.wakatime-project

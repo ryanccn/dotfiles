@@ -1,0 +1,13 @@
+# p10k
+# romkatv/powerlevel10k
+
+# ohmyzsh
+ohmyzsh/ohmyzsh path:plugins/macos
+
+# vivid
+ryanccn/vivid-zsh
+
+# fish-like features
+zsh-users/zsh-autosuggestions kind:defer
+# zsh-users/zsh-syntax-highlighting kind:defer
+zdharma-continuum/fast-syntax-highlighting kind:defer
