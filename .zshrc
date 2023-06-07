@@ -39,8 +39,8 @@ setopt hist_verify
 setopt share_history
 
 # compile completions
-local comp_cache_path="$HOME/.cache/zsh"
-local zcompdump_path="$comp_cache_path/zcompdump"
+comp_cache_path="$HOME/.cache/zsh"
+zcompdump_path="$comp_cache_path/zcompdump"
 
 autoload -Uz compinit
 compinit -d "$zcompdump_path"
@@ -48,8 +48,6 @@ if [[ ! "${zcompdump_path}.zwc" -nt "$zcompdump_path" ]]
 then
 	zcompile "$zcompdump_path"
 fi
-
-unset zcompdump_path
 
 # vivid
 vivid_theme="catppuccin-macchiato"
@@ -66,7 +64,8 @@ zstyle ':completion:*' group-name ''
 
 zstyle ':completion:*' use-cache 'true'
 zstyle ':completion:*' cache-path "$comp_cache_path"
-unset comp_cache_path
+
+unset comp_cache_path zcompdump_path
 
 # aliases
 alias vim="hx"

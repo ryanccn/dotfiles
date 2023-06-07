@@ -2,7 +2,7 @@
   //
   // overall appearance
   //
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Catppuccin Frappé",
   "catppuccin.accentColor": "pink",
   "catppuccin.workbenchMode": "flat",
   "catppuccin.customUIColors": {
@@ -10,7 +10,7 @@
       "activityBar.activeBorder": "accent"
     }
   },
-  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.iconTheme": "catppuccin-frappe",
   "catppuccin.boldKeywords": false,
   "catppuccin.italicKeywords": false,
   //
@@ -35,11 +35,16 @@
   "editor.inlineSuggest.enabled": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.untitled.hint": "hidden",
+  //
+  // terminal
+  //
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.5,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
   //
   // web dev
   //
@@ -110,8 +115,7 @@
   "go.toolsManagement.autoUpdate": true,
   "files.associations": {
     "*.mcmeta": "json",
-    "*.plist": "xml",
-    "justfile": "makefile"
+    "*.plist": "xml"
   },
   //
   // deno
