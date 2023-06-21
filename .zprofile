@@ -40,6 +40,7 @@ typeset -U paths=(
     "$(brew --prefix ccache)/libexec"
     "$GOPATH/bin"
     "$HOME/.docker/bin"
+    "$HOME/dev/nish/bin"
 )
 
 # turn PATH into a deduplicated array

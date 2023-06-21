@@ -109,6 +109,12 @@
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
   //
   // miscellaneous
   //
@@ -129,5 +135,6 @@
   //
   // svelte
   //
-  "svelte.enable-ts-plugin": true
+  "svelte.enable-ts-plugin": true,
+  "nix.enableLanguageServer": true
 }
