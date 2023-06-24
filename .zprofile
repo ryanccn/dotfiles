@@ -28,8 +28,7 @@ export CHECKPOINT_DISABLE=1        # Prisma
 export DISABLE_TELEMETRY=YES       # diffusers
 
 # go
-export GOPATH="$HOME/.go"
-export GOPROXY="direct"
+# export GOPATH="$HOME/.go"
 
 # paths to add to PATH
 typeset -U paths=(

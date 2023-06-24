@@ -121,7 +121,8 @@
   "go.toolsManagement.autoUpdate": true,
   "files.associations": {
     "*.mcmeta": "json",
-    "*.plist": "xml"
+    "*.plist": "xml",
+    ".dockerignore": "ignore"
   },
   //
   // deno

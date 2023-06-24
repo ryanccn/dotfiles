@@ -4,15 +4,11 @@ import {
   normalize,
 } from "https://deno.land/std@0.187.0/path/mod.ts";
 
-import walk from "https://esm.sh/ignore-walk@6.0.3";
-import { walk as fsWalk } from "https://deno.land/std@0.187.0/fs/walk.ts";
-
 import {
   cyan,
   dim,
   green,
   red,
-  yellow,
 } from "https://deno.land/std@0.187.0/fmt/colors.ts";
 
 const HOME = Deno.env.get("HOME");
@@ -74,35 +70,4 @@ export const writeText = async (to: string, text: string) => {
 
 export const logExec = (thing: string, to: string) => {
   console.log(cyan("Wrote"), thing, dim("to"), to);
-};
-
-export const clean = async () => {
-  if (!Deno.cwd().endsWith("dotfiles")) {
-    throw new Error(
-      "Not in dotfiles directory, emergency aborting cleaning procedure",
-    );
-  }
-
-  /* Delete all dotfiles */
-
-  const files = await walk({ ignoreFiles: [".dotfilesignore"] });
-  for (const f of files) {
-    await Deno.remove(f);
-  }
-
-  /* Clear empty directories */
-
-  const foldersIterator = fsWalk(Deno.cwd(), { includeFiles: false });
-  const folders = [];
-  for await (const dir of foldersIterator) folders.push(dir.path);
-
-  for (let _ = 1; _ <= 2; _++) {
-    for (const dir of folders) {
-      try {
-        await Deno.remove(dir);
-      } catch { /* just ignore */ }
-    }
-  }
-
-  console.log(`${yellow("Cleared")} current directory`);
 };

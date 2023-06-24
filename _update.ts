@@ -1,6 +1,4 @@
-import { clean, cp, exec, logExec, writeText } from "./_utils.ts";
-
-await clean();
+import { cp, exec, logExec, writeText } from "./_utils.ts";
 
 await cp("~/.zshrc");
 await cp("~/.zprofile");
@@ -14,6 +12,11 @@ await cp("~/.config/starship.toml");
 await cp("~/.config/helix/config.toml");
 await cp("~/.config/bat/config");
 await cp("~/.config/silicon/config");
+
+await cp(
+  "~/Library/Application Support/go/env",
+  "go/env",
+);
 
 await cp(
   "~/Library/Application Support/Code/User/settings.json",
