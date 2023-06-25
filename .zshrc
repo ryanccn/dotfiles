@@ -54,11 +54,11 @@ vivid_theme="catppuccin-macchiato"
 
 # antidote
 source "$(brew --prefix antidote)/share/antidote/antidote.zsh"
-antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
+antidote load "${ZDOTDIR:-$HOME}/.zsh_plugins.txt"
 
 # configure completion styles
 zstyle ':completion:*' menu select
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 zstyle ':completion:*' group-name ''
 
@@ -75,19 +75,47 @@ alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgre
 alias ghrvw="gh repo view --web"
 
 alias opr="op run --env-file=.env.1password --"
+alias dr="doppler run --"
 
 alias dequarantine="xattr -d com.apple.quarantine"
 
-alias wakatime-enable="touch .wakatime-project"
-alias wakatime-disable="[ -f .wakatime-project ] && rm .wakatime-project"
+function wakatime() {
+  if [ $# -eq 0 ]; then
+    echo "wakatime <enable|disable>"
+    return 0
+  elif [ $# -gt 1 ]; then
+    echo "Too many arguments!"
+    return 1
+  fi
+
+  if [ "$1" = "enable" ]; then
+    touch .wakatime-project
+    echo "Wakatime enabled in project!"
+    return 0
+  fi
+
+  if [ "$1" = "disable" ]; then
+    if [ -f .wakatime-project ]; then
+      rm .wakatime-project
+      echo "Wakatime disabled in project"
+    else
+      echo "Wakatime is already disabled in project!"
+    fi
+
+    return 0
+  fi
+
+  echo "Unrecognized command ${1}!"
+  return 1
+}
 
 alias bcpa="brew cleanup --prune=all"
 alias puil="pnpm update --interactive --latest"
 alias pip-upgrade-all="pip --disable-pip-version-check list --outdated --format=json | python -c \"import json, sys; print('\n'.join([x['name'] for x in json.load(sys.stdin)]))\" | xargs -n1 pip install -U"
 
 function take() {
-  mkdir $1
-  cd $1
+  mkdir "$1"
+  cd "$1" || return 1
 }
 
 # starship
