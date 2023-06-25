@@ -5,8 +5,6 @@ then
 fi
 FPATH="$HOME/.zfunc:$FPATH"
 
-[[ -f "$HOME/.config/tabtab/zsh/__tabtab.zsh" ]] && . "$HOME/.config/tabtab/zsh/__tabtab.zsh" || true
-
 # environment variables
 export LANG=en_US.UTF-8
 
@@ -48,6 +46,8 @@ if [[ ! "${zcompdump_path}.zwc" -nt "$zcompdump_path" ]]
 then
 	zcompile "$zcompdump_path"
 fi
+
+[ -f "$HOME/.config/tabtab/zsh/__tabtab.zsh" ] && . "$HOME/.config/tabtab/zsh/__tabtab.zsh" || true
 
 # vivid
 vivid_theme="catppuccin-macchiato"
