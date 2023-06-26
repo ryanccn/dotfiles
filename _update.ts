@@ -12,6 +12,7 @@ await cp("~/.config/starship.toml");
 await cp("~/.config/helix/config.toml");
 await cp("~/.config/bat/config");
 await cp("~/.config/silicon/config");
+await cp("~/.config/atuin/config.toml");
 
 await cp(
   "~/Library/Application Support/go/env",

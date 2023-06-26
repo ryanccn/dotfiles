@@ -1,0 +1,3 @@
+db_path = "~/.history.db"
+update_check = false
+style = "compact"
