@@ -69,7 +69,7 @@ unset comp_cache_path zcompdump_path
 
 # aliases
 alias vim="hx"
-alias ls="exa"
+alias ls="exa -a"
 
 alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"
 alias ghrvw="gh repo view --web"
@@ -123,9 +123,6 @@ eval "$(starship init zsh)"
 
 # zoxide
 eval "$(zoxide init zsh)"
-
-# fzf
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
 # direnv
 command -v direnv &> /dev/null && eval "$(direnv hook zsh)"
