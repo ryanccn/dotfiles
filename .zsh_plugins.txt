@@ -4,9 +4,6 @@
 # ohmyzsh
 ohmyzsh/ohmyzsh path:plugins/macos
 
-# atuin
-ellie/atuin
-
 # vivid
 ryanccn/vivid-zsh
 

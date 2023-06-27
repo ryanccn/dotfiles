@@ -12,7 +12,6 @@ await cp("~/.config/starship.toml");
 await cp("~/.config/helix/config.toml");
 await cp("~/.config/bat/config");
 await cp("~/.config/silicon/config");
-await cp("~/.config/atuin/config.toml");
 
 await cp(
   "~/Library/Application Support/go/env",
@@ -26,7 +25,7 @@ await cp(
 
 await exec(["brew", "bundle", "dump", "--file=-"]).then(async (output) => {
   await writeText("packages/Brewfile", output);
-  logExec("Homebrew packages", "packages/Brewfile");
+  logExec("homebrew", "packages/Brewfile");
 });
 
 await exec(["fnm", "ls"]).then(async (output) => {
@@ -46,7 +45,7 @@ await exec(["fnm", "ls"]).then(async (output) => {
       "\n",
   );
 
-  logExec("Node.js versions (fnm)", "packages/fnm.sh");
+  logExec("fnm", "packages/fnm.sh");
 });
 
 await exec(["pyenv", "versions"]).then(async (output) => {
@@ -61,7 +60,7 @@ await exec(["pyenv", "versions"]).then(async (output) => {
     versions.map((v) => `pyenv install ${v}`).join("\n") + "\n",
   );
 
-  logExec("Python versions (pyenv)", "packages/pyenv.sh");
+  logExec("pyenv", "packages/pyenv.sh");
 });
 
 await exec(["pipx", "list", "--json"]).then(async (output) => {
@@ -72,5 +71,5 @@ await exec(["pipx", "list", "--json"]).then(async (output) => {
     Object.keys(data.venvs).map((k) => `pipx install ${k}`).join("\n") + "\n",
   );
 
-  logExec("Python applications (pipx)", "packages/pipx.sh");
+  logExec("pipx", "packages/pipx.sh");
 });

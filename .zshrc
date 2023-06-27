@@ -121,6 +121,9 @@ function take() {
 # starship
 eval "$(starship init zsh)"
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # zoxide
 eval "$(zoxide init zsh)"
 
