@@ -69,7 +69,7 @@ unset comp_cache_path zcompdump_path
 
 # aliases
 alias vim="hx"
-alias ls="exa -a"
+alias ls="exa --all --icons"
 
 alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"
 alias ghrvw="gh repo view --web"
