@@ -79,36 +79,6 @@ alias dr="doppler run --"
 
 alias dequarantine="xattr -d com.apple.quarantine"
 
-function wakatime() {
-  if [ $# -eq 0 ]; then
-    echo "wakatime <enable|disable>"
-    return 0
-  elif [ $# -gt 1 ]; then
-    echo "Too many arguments!"
-    return 1
-  fi
-
-  if [ "$1" = "enable" ]; then
-    touch .wakatime-project
-    echo "Wakatime enabled in project!"
-    return 0
-  fi
-
-  if [ "$1" = "disable" ]; then
-    if [ -f .wakatime-project ]; then
-      rm .wakatime-project
-      echo "Wakatime disabled in project"
-    else
-      echo "Wakatime is already disabled in project!"
-    fi
-
-    return 0
-  fi
-
-  echo "Unrecognized command ${1}!"
-  return 1
-}
-
 alias bcpa="brew cleanup --prune=all"
 alias puil="pnpm update --interactive --latest"
 alias pip-upgrade-all="pip --disable-pip-version-check list --outdated --format=json | python -c \"import json, sys; print('\n'.join([x['name'] for x in json.load(sys.stdin)]))\" | xargs -n1 pip install -U"
@@ -116,6 +86,17 @@ alias pip-upgrade-all="pip --disable-pip-version-check list --outdated --format=
 function take() {
   mkdir "$1"
   cd "$1" || return 1
+}
+
+function clean_vscode_workspace_storage() {
+  for i in "$HOME/Library/Application Support/Code/User/workspaceStorage/"*; do
+    if [ -f $i/workspace.json ]; then 
+      older="$(python3 -c "import sys, json; print(json.load(open(sys.argv[1], 'r'))['folder'])" $i/workspace.json 2>/dev/null | sed 's#^file://##;s/+/ /g;s/%\(..\)/\\x\1/g;')";
+      if [ -n "$folder" ] && [ ! -d "$folder" ]; then
+        echo "Removing workspace $(basename $i) for deleted folder $folder of size $(du -sh $i|cut -f1)"; rm -rfv "$i";
+      fi
+    fi
+  done
 }
 
 # starship

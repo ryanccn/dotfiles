@@ -2,7 +2,7 @@
   //
   // overall appearance
   //
-  "workbench.colorTheme": "Catppuccin Frappé",
+  "workbench.colorTheme": "Rosé Pine Moon",
   "catppuccin.accentColor": "pink",
   "catppuccin.workbenchMode": "flat",
   "catppuccin.customUIColors": {
@@ -19,6 +19,7 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "diffEditor.renderSideBySide": false,
+  "git.inputValidation": "off",
   //
   // editor
   //
@@ -47,8 +48,7 @@
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
   //
   // web dev
-  //
-  "npm.packageManager": "yarn",
+  //,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "tailwindCSS.includeLanguages": {
     "typescript": "javascript",
@@ -90,22 +90,6 @@
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
-  "[liquid]": {
-    "editor.defaultFormatter": "sissel.shopify-liquid",
-    "editor.formatOnSave": true
-  },
-  "[liquid-javascript]": {
-    "editor.defaultFormatter": "sissel.shopify-liquid",
-    "editor.formatOnSave": false
-  },
-  "[liquid-css]": {
-    "editor.defaultFormatter": "sissel.shopify-liquid",
-    "editor.formatOnSave": false
-  },
-  "[liquid-scss]": {
-    "editor.defaultFormatter": "sissel.shopify-liquid",
-    "editor.formatOnSave": false
-  },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
@@ -122,7 +106,11 @@
   "files.associations": {
     "*.mcmeta": "json",
     "*.plist": "xml",
-    ".dockerignore": "ignore"
+    ".dockerignore": "ignore",
+    ".dev.vars": "properties",
+    ".env.example": "properties",
+    "*.sarif": "json",
+    ".tokeignore": "ignore"
   },
   //
   // deno
@@ -137,11 +125,17 @@
   // svelte
   //
   "svelte.enable-ts-plugin": true,
+  //
+  // nix
+  //
   "nix.enableLanguageServer": true,
+  //
+  // file nesting
+  //
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 6/29/2023, 4:42:14 PM",
+    "//": "Last update at 7/5/2023, 6:16:24 PM",
     "*.asax": "$(capture).*.cs, $(capture).*.vb",
     "*.ascx": "$(capture).*.cs, $(capture).*.vb",
     "*.ashx": "$(capture).*.cs, $(capture).*.vb",
