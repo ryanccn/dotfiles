@@ -9,6 +9,7 @@ await cp("~/.gitignore", "dot_gitignore");
 await cp("~/.hushlogin");
 
 await cp("~/.config/starship.toml");
+await cp("~/.config/btop/btop.conf");
 await cp("~/.config/helix/config.toml");
 await cp("~/.config/bat/config");
 await cp("~/.config/silicon/config");

@@ -2,7 +2,7 @@
   //
   // overall appearance
   //
-  "workbench.colorTheme": "Rosé Pine Moon",
+  "workbench.colorTheme": "Catppuccin Frappé",
   "catppuccin.accentColor": "pink",
   "catppuccin.workbenchMode": "flat",
   "catppuccin.customUIColors": {
